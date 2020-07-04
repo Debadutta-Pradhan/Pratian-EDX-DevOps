@@ -1,0 +1,6 @@
+If the glot-snippet container is getting terminnated always after few secs (probably 10-12 sec) the the issue is the IP address that 
+we are giving for connection with couchdb in the Env variable file and if we are having AWS env i faced this because i was mapping Elastic IP 
+of server with couch db port which when i'm running snippet container somehow it's not able to connect with couchDB server with this IP so 
+we have to connect with the Internal IP address of server to resolve this issue. I also tested it by conneting it with container internal IP
+of couchDb which we can check by inspecting couchDB container but in my point of view this container IP can change as we are using compose file
+to run all containers at once. so we should connect couchDB with internal IP of instance like we did in docker domain settings for glot.  

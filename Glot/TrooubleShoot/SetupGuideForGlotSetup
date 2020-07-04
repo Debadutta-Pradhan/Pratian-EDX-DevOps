@@ -188,3 +188,7 @@ To see these additional updates run: apt list --upgradable
 
 *** System restart required ***
 Last login: Tue Jun 30 05:04:08 2020 from 106.207.0.200
+
+
+
+## Important Tip use localhost in place of IP in the env file for connetig to all 3 api servervice if you getting error while running containers except for DB & DOCKER_API_URL connections. 
