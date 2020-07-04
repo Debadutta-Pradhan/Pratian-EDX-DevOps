@@ -136,6 +136,14 @@ WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 >Resolution can be found here 
 https://docs.oracle.com/en/operating-systems/oracle-linux/docker/issue-iptables-warning.html 
+> to reolve above warning and for glot-snippet and glot-www to work we need to run below command after adding below mentioned 3 lines in "/etc/sysctl.conf" file  
+#Content to add is 
+net.ipv4.conf.all.forwarding=1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+>Now run below commands 
+sudo modprobe br_netfilter
+sudo sysctl -p /etc/sysctl.conf
 
 ( NOTE: very Important for AWS Setup )
 1. spesific for the AWS env setup both the above issue should be resolved but in inhouse server glot was working without resloving the issue i don't know why
